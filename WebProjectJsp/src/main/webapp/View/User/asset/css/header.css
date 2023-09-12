@@ -19,6 +19,8 @@ a{
 .wrapper {
     width: 100%;
     min-height: 6.25rem;
+    border-bottom-style: solid;
+    border-bottom-color: #ccc;
 }
 .header_section{
     background-color: var(--white-color);
@@ -45,7 +47,7 @@ a{
 
 }
 .navbar_item{
-    font-size: 1.2rem;
+    font-size: 1rem;
     font-weight: 600;
     list-style: none;
 }

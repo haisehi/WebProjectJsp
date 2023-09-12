@@ -7,9 +7,157 @@
 }
 html,body{	
 	font-size: 1.2rem;
-	font-family: Arial, Helvetica, sans-serif;
+	font-family: sans-serif;
 }
 .wrapper_content{
+	width: 100%;
 	height: 100vh;
 	background-color: #ccc;
 }
+
+
+/* restaurant system file */
+.map{
+	border: none;
+	z-index: -1;
+}
+.wrapper_FindStore{
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	margin:50px 0;
+}
+.form_FindStore{
+	margin-right:2% ;
+	width: 520px;
+}
+.label-form_FindStore{
+	font-family: sans-serif;
+	font-size: 1.8rem;
+	line-height: 50px;
+	font-weight: 800;
+}
+.wp-form_FindStore{
+	width: 100%;
+	display: flex;
+	margin : 25px 0;
+	padding: 5px;
+	border-bottom-style: solid;
+	border-bottom-color:#202124 ;
+}
+.input-form_FindStore{
+	width: 100%;
+	border:none;
+	line-height: 44px;
+	background-color: transparent;
+}
+.button_form_FindStore{
+	width: 100%;
+	padding: 10px 0;
+	margin:30px 0;
+	min-height: 47px;
+	border: none;
+	border-color: transparent;
+	border-radius: 25px;
+	background-color: #e4002b;
+	color: white;
+	font-weight: 600;
+	font-size: 15px;
+	cursor: pointer;
+}
+.img_FindStore{
+	width: 526px;
+	height: 100%;
+	object-fit: fill;
+	margin-left:2% ;
+	border-radius: 10px;
+}
+/* login and sign up*/
+.wrapper_loginOrSignUp{
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	
+}
+.img_login{
+	width: 526px;
+	height: 100%;
+	object-fit: fill;
+	margin-right:2% ;
+}
+.form{
+	margin-left:2% ;
+	width: 520px;
+}
+.form_account{
+	width: 520px;
+	padding: 50px 0;
+}
+.label_account{
+	font-family: sans-serif;
+	font-size: 1.8rem;
+	line-height: 50px;
+	font-weight: 800;
+}
+.label-form_account{
+	width: 100%;
+	display: flex;
+	margin : 25px 0;
+	padding: 5px;
+	border-bottom-style: solid;
+	border-bottom-color:#202124 ;
+	
+}
+.label_input{
+	display: none;
+}
+.input-form_account{
+	width: 100%;
+	border:none;
+	line-height: 44px;
+	background-color: transparent;
+}
+
+.button_account{
+	width: 100%;
+	padding: 10px 0;
+	margin:30px 0;
+	min-height: 47px;
+	border: none;
+	border-color: transparent;
+	border-radius: 25px;
+	background-color: #28a745;
+	color: white;
+	font-weight: 600;
+	font-size: 15px;
+	cursor: pointer;
+}
+.button_account_signup{
+	width: 100%;
+	padding: 10px 0;
+	margin:30px 0;
+	min-height: 47px;
+	border: none;
+	border-color: transparent;
+	border-radius: 25px;
+	background-color: #e4002b;;
+	color: white;
+	font-weight: 600;
+	font-size: 15px;
+	cursor: pointer;
+}
+.forgot_pwd{
+	text-align: right;
+}
+.font-form_account{
+	color: #202124;
+	font-size: 15px;
+	margin:10px 0;
+}
+.font-signin{
+	text-align: center;
+}
+.font-signin a{
+	font-weight: 600;
+}
+
