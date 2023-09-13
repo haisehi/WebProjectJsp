@@ -18,7 +18,7 @@
 </head>
 <body>
 	<jsp:include page="header/header.html"/>
-	<jsp:include page="content/restaurantSystem.html"/>
+	<jsp:include page="content/login.html"/>
 	<jsp:include page="footer/footer.html"/>
 </body>
 </html>
