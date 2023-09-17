@@ -17,8 +17,8 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css" />
 </head>
 <body>
-	<jsp:include page="header/header.html"/>
-	<jsp:include page="content/login.html"/>
-	<jsp:include page="footer/footer.html"/>
+
+	<jsp:include page="content/content.jsp"/>
+
 </body>
 </html>

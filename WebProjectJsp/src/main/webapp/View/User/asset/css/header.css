@@ -24,7 +24,6 @@ a{
 }
 .header_section{
     background-color: var(--white-color);
-    min-height: 100%;
     width: 62.50rem;
     margin: 0px 150px;
     padding: 11px 15px;

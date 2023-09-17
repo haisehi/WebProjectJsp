@@ -9,25 +9,25 @@
 						<!-- logo -->
 						<a href="#"><img class="logo" alt="logo" src="./asset/img/logo.jpg" /></a>
 						<a href="">
-							<li class="navbar_item">Thực đơn</li>
+							<li class="navbar_item">MENU</li>
 						</a>
 						<a href="">
-							<li class="navbar_item">Dịch vụ</li>
+							<li class="navbar_item">BOOK A PARTY</li>
 						</a>
 						<a href="">
-							<li class="navbar_item">Hệ thống nhà hàng</li>
+							<li class="navbar_item">NEWS</li>
 						</a>
-						<a href="">
-							<li class="navbar_item">Tin tức</li>
+						<a href="index.jsp?quanly=findStore">
+							<li class="navbar_item">FIND STORE</li>
 						</a>
 					</ul>
 				</nav>
 				<!-- button -->
 				<div class="navbar_headerRight">
-					<a>
+					<a href="index.jsp?quanly=login">
 						<i class="fa-regular fa-circle-user icon_navbarHeaderRight"></i>
 					</a>
-					<a >
+					<a href="index.jsp?quanly=cart">
 						<i class="fa-solid fa-cart-shopping icon_navbarHeaderRight"></i>
 					</a>
 					<button class="icon_header_taskbar">

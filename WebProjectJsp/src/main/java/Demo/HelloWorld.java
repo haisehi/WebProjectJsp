@@ -17,7 +17,8 @@ public class HelloWorld extends HttpServlet {
     
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		response.getWriter().write("<h1>Hello world</h1>");;
+		response.getWriter().write("<h1>Hello world</h1>");
+
 	}
 
 }

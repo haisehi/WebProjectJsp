@@ -10,7 +10,7 @@
 /* login and sign up*/
 .wrapper_loginOrSignUp{
 	display: flex;
-	height: 100vh;
+	height: 110vh;
 	justify-content: center;
 	
 }
@@ -39,7 +39,7 @@
 .label-form_account{
 	width: 100%;
 	display: flex;
-    margin: 20px 0;
+    margin: 0px;
     padding: 25px 5px 5px 5px;
 	position: relative;
 }
