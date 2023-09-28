@@ -1,15 +1,18 @@
-<!DOCTYPE html>
-<html lang="vi">
-<head>
-  <meta charset="UTF-8">
-  <title>Dịch vụ tiệc</title>
-  <link rel="stylesheet" href="dattiec.css">
-</head>
-<body>
-  <header>
-    <h1>ĐẶT TIỆC</h1>
-  </header>
-  <main>
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
+<link href="./asset/css/bookAParty.css" rel="stylesheet">
+<link href="./asset/css/header.css" rel="stylesheet">
+<link href="./asset/css/footer.css" rel="stylesheet">
+<!-- font awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
+<!-- Header -->
+<jsp:include page="../header/header.jsp"/>
+	
+<div class="wrapper_book">
     <section class="content">
       <div class="btn-box">
         <button id="btn-left" onclick="openTCT()">TỔ CHỨC TIỆC</button>
@@ -51,34 +54,14 @@
         </div>
         
       </div>
-      <script>
-        var contentleft = document.getElementById("content-left");
-        var contentright = document.getElementById("content-right");
-        var btnleft = document.getElementById("btn-left");
-        var btnright = document.getElementById("btn-right");
 
-        function openTCT(){
-          contentleft.style.transform = "translateX(44%)";
-          contentright.style.transform = "translateX(300%)";
-          btnleft.style.color = "#000";
-          btnright.style.color = "#949494";
-        }
-
-        function openDHL(){
-          contentleft.style.transform = "translateX(300%)";
-          contentright.style.transform = "translateX(100%)";
-          btnleft.style.color = "#949494";
-          btnright.style.color = "#000";
-        }
-
-      </script>
     </section>
     <section class="menu">
       <h2>Thực đơn tiệc</h2>
-      <ul>
-        <li>
+      <ul class="menu_list">
+        <li class="menu_list-item">
           <a href="#">
-            <img src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
+            <img class="menu_list-img" src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
             <h3>Combo Lucky</h3>
             <h3 style="color:red;">79.000đ</h3>
             <p>1 miếng gà</p>
@@ -87,9 +70,9 @@
             <p>1 kem Cone</p>
           </a>
         </li>
-        <li>
+        <li class="menu_list-item">
           <a href="#">
-            <img src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
+            <img class="menu_list-img" src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
             <h3>Combo Lucky</h3>
             <h3 style="color:red;">79.000đ</h3>
             <p>1 miếng gà</p>
@@ -98,9 +81,9 @@
             <p>1 kem Cone</p>
           </a>
         </li>
-        <li>
+        <li class="menu_list-item">
           <a href="#">
-            <img src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
+            <img class="menu_list-img" src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
             <h3>Combo Lucky</h3>
             <h3 style="color:red;">79.000đ</h3>
             <p>1 miếng gà</p>
@@ -109,9 +92,9 @@
             <p>1 kem Cone</p>
           </a>
         </li>
-        <li>
+        <li class="menu_list-item">
           <a href="#">
-            <img src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
+            <img class="menu_list-img" src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
             <h3>Combo Lucky</h3>
             <h3 style="color:red;">79.000đ</h3>
             <p>1 miếng gà</p>
@@ -120,9 +103,9 @@
             <p>1 kem Cone</p>
           </a>
         </li>
-        <li>
+        <li class="menu_list-item">
           <a href="#">
-            <img src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
+            <img class="menu_list-img" src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
             <h3>Combo Lucky</h3>
             <h3 style="color:red;">79.000đ</h3>
             <p>1 miếng gà</p>
@@ -131,9 +114,9 @@
             <p>1 kem Cone</p>
           </a>
         </li>
-        <li>
+        <li class="menu_list-item">
           <a href="#">
-            <img src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
+            <img class="menu_list-img" src="https://static.kfcvietnam.com.vn/images/email/lucky.jpg" alt="Gà rán">
             <h3>Combo Lucky</h3>
             <h3 style="color:red;">79.000đ</h3>
             <p>1 miếng gà</p>
@@ -144,7 +127,7 @@
         </li>
       </ul>
     </section>
-    <section class="đặt-tiệc">
+    <section class="book_party">
       <h2 >Đặt tiệc</h2>
       <div>
         <div>
@@ -220,11 +203,11 @@
       </div>
       
     </section>
-  </main>
-  <footer>
-    <p>Dịch vụ tiệc</p>
-  </footer>
-</body>
+  </div>
+<!-- footer -->
+	<jsp:include page="../footer/footer.jsp"/>
+
+<!-- Javascript -->
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
 <script>
   $("#datngay").click(function(){
@@ -236,4 +219,25 @@
     $ ('html, body').animate({scrollTop: 2000}, 800)
   });
 </script>
-</html>
+      <script>
+        var contentleft = document.getElementById("content-left");
+        var contentright = document.getElementById("content-right");
+        var btnleft = document.getElementById("btn-left");
+        var btnright = document.getElementById("btn-right");
+
+        function openTCT(){
+          contentleft.style.transform = "translateX(50%)";
+          contentright.style.transform = "translateX(400%)";
+          btnleft.style.color = "#000";
+          btnright.style.color = "#949494";
+        }
+
+        function openDHL(){
+          contentleft.style.transform = "translateX(300%)";
+          contentright.style.transform = "translateX(100%)";
+          btnleft.style.color = "#949494";
+          btnright.style.color = "#000";
+        }
+
+      </script>
+

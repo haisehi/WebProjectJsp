@@ -15,6 +15,13 @@
     else if(click.equals("login")){
     	request.getRequestDispatcher("login.jsp").forward(request, response);
     }
+    else if(click.equals("bookAParty")){
+    	request.getRequestDispatcher("bookAParty.jsp").forward(request, response);
+    }
+    else if(click.equals("news")){
+    	request.getRequestDispatcher("news.jsp").forward(request, response);
+    }
+
     
     else {
         request.getRequestDispatcher("login.jsp").forward(request, response);

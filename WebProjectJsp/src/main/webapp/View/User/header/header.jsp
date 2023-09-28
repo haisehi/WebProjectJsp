@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 
 		<header class="wrapper">
-			<section class="header_section">
+			<div class="header_section">
 				<!--navbar-->
 				<nav class="navbar_headerLeft">
 					<ul class="navbar_wrp_item">
@@ -11,10 +11,10 @@
 						<a href="">
 							<li class="navbar_item">MENU</li>
 						</a>
-						<a href="">
+						<a href="index.jsp?quanly=bookAParty">
 							<li class="navbar_item">BOOK A PARTY</li>
 						</a>
-						<a href="">
+						<a href="index.jsp?quanly=news">
 							<li class="navbar_item">NEWS</li>
 						</a>
 						<a href="index.jsp?quanly=findStore">
@@ -34,5 +34,5 @@
 						<i class="fa-solid fa-bars icon_navbarHeaderRight"></i>
 					</button>
 				</div>
-			</section>
+			</div>
 		</header>
