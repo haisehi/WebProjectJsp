@@ -1,12 +1,10 @@
-body{
-    background-color: #eaeaea;
-}
+
 .content{
-    background-color: #fff;
+	background-color: #eaeaea;
     margin: auto;
     padding-top: 10px;
     width: 1200px;
-    height: 1000px;
+    height: 1200px;
 }
 
 .content1{
