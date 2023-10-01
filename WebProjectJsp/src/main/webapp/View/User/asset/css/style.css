@@ -14,7 +14,7 @@
 }
 
 * {
-   font-family: 'Poppins', sans-serif;
+
    margin: 0;
    padding: 0;
    box-sizing: border-box;
@@ -89,15 +89,16 @@ section {
 .heading-title {
    text-align: left;
    margin-bottom: 3rem;
-   font-size: 3rem;
+   margin-top: 20px;
+/*   font-size: 3rem; cần sửa*/
    text-transform: uppercase;
    color: var(--black);
-   margin-right: 63rem;
+
    padding-top: 12px;
 }
 
 .header {
-   position: sticky;
+   position: relative;
    top: 0;
    left: 0;
    right: 0;
@@ -117,7 +118,7 @@ section {
 }
 
 .header .navbar a {
-   font-size: 2rem;
+/*   font-size: 2rem; cần sửa*/ 
    margin-left: 2rem;
    color: var(--black);
 }
@@ -371,7 +372,7 @@ section {
 /* Thiết lập cho thanh menu */
 .navbar {
    background-color: white; /* Đặt màu nền là màu trắng */
-   position: fixed;
+   position: sticky;
    top: 0;
    left: 0;
    right: 0;

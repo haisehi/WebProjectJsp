@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link href="./asset/css/content.css" rel="stylesheet">
-<link href="./asset/css/findStore.css" rel="stylesheet">
+<link href="./asset/css/style.css" rel="stylesheet">
 <link href="./asset/css/header.css" rel="stylesheet">
 <link href="./asset/css/footer.css" rel="stylesheet">
 <!-- swiper css link  -->
@@ -15,7 +15,11 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 <!-- Header -->
 	<jsp:include page="../header/header.jsp"/>
       
-      <!-- Navbar Start  -->
+
+
+      <div class="Wrapper_menu">
+	<div class="header">
+	     <!-- Navbar Start  -->
      <section class="navbar " style="padding: 1rem 10%;" >
       <ul>
          <li><a href="#combo1"> Ưu đãi</a></li>
@@ -28,19 +32,21 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
        </ul>
      </section>
       <!-- Navbar End  -->
+	
+	</div>
 
 
       <!-- home packages section starts  -->
-
+      
       <section id="combo1" class="home-packages">
       
-        <h1  class="heading-title" style="margin-top: 20px;"> Ưu Đãi  </h1>
+        <h1  class="heading-title" style=""> Ưu Đãi  </h1>
 
          <div class="box-container">
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 1</h2>
@@ -55,7 +61,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-2.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-2.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 2</h2>
@@ -68,7 +74,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-3.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-3.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 3</h2>
@@ -88,7 +94,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 1</h2>
@@ -103,7 +109,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 2</h2>
@@ -116,7 +122,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 3</h2>
@@ -137,7 +143,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 1</h2>
@@ -152,7 +158,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 2</h2>
@@ -165,7 +171,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 3</h2>
@@ -186,7 +192,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 1</h2>
@@ -201,7 +207,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 2</h2>
@@ -214,7 +220,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 3</h2>
@@ -235,7 +241,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 1</h2>
@@ -250,7 +256,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 2</h2>
@@ -263,7 +269,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 3</h2>
@@ -285,7 +291,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 1</h2>
@@ -300,7 +306,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 2</h2>
@@ -313,7 +319,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 3</h2>
@@ -334,7 +340,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 1</h2>
@@ -349,7 +355,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 2</h2>
@@ -362,7 +368,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 3</h2>
@@ -376,6 +382,7 @@ href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
 
          </div>
       </section>
+      </div>
 
       <!-- home packages section ends -->
 

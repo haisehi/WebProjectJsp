@@ -21,10 +21,12 @@
     else if(click.equals("news")){
     	request.getRequestDispatcher("news.jsp").forward(request, response);
     }
-
+    else if(click.equals("menu")){
+    	request.getRequestDispatcher("menu.jsp").forward(request, response);
+    }
     
     else {
-        request.getRequestDispatcher("login.jsp").forward(request, response);
+        request.getRequestDispatcher("home.jsp").forward(request, response);
     }
     %>
 </div>

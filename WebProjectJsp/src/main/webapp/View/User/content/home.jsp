@@ -22,15 +22,15 @@
 
             <div class="swiper-wrapper">
                <div class="swiper-slide slide"
-                  style="background:url(../asset/img/slide-1.jpg) no-repeat">
+                  style="background:url(./asset/img/slide-1.jpg) no-repeat">
                </div>
 
                <div class="swiper-slide slide"
-                  style="background:url(../asset/img/slide-2.jpg) no-repeat" >
+                  style="background:url(./asset/img/slide-2.jpg) no-repeat" >
                </div>
 
                <div class="swiper-slide slide"
-                  style="background:url(../asset/img/slide-3.jpg) no-repeat">
+                  style="background:url(./asset/img/slide-3.jpg) no-repeat">
                </div>
 
             </div>
@@ -57,7 +57,7 @@
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-menu-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-menu-1.jpg" alt>
                </div>
                <div class="content">
                   <a href="">
@@ -69,7 +69,7 @@
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-menu-2.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-menu-2.jpg" alt>
                </div>
                <div class="content">
                   <a href="">
@@ -81,7 +81,7 @@
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-menu-3.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-menu-3.jpg" alt>
                </div>
                <div class="content">
                   <a href="">
@@ -93,7 +93,7 @@
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-menu-4.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-menu-4.jpg" alt>
                </div>
                <div class="content">
                   <a href="">
@@ -107,7 +107,7 @@
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-menu-5.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-menu-5.jpg" alt>
                </div>
                <div class="content">
                   <a href="">
@@ -121,7 +121,7 @@
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-menu-6.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-menu-6.jpg" alt>
                </div>
                <div class="content">
                   <a href="">
@@ -134,7 +134,7 @@
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-menu-7.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-menu-7.jpg" alt>
                </div>
                <div class="content">
                   <a href="">
@@ -147,7 +147,7 @@
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-menu-8.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-menu-8.jpg" alt>
                </div>
                <div class="content">
                   <a href="">
@@ -165,7 +165,7 @@
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-1.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 1</h2>
@@ -180,7 +180,7 @@
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-2.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-2.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 2</h2>
@@ -193,7 +193,7 @@
 
             <div class="box">
                <div class="image">
-                  <img style="cursor: pointer;" src="../asset/img/home-combo-3.jpg" alt>
+                  <img style="cursor: pointer;" src="./asset/img/home-combo-3.jpg" alt>
                </div>
                <div class="content">
                   <h2>Combo nhóm 3</h2>
@@ -224,6 +224,6 @@
       <!-- swiper js link  -->
       <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
       <!-- custom js file link  -->
-      <script src="js/script.js"></script>
+      <script src="./asset/js/script.js"></script>
 <!-- footer -->
 <jsp:include page="../footer/footer.jsp"/>

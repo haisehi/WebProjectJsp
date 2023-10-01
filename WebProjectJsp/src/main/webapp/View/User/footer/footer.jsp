@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    <link href="./asset/css/footer.css" rel="stylesheet">
 <div class="wrapper_footer">
 	<a href="#">
 		<img class="logo" alt="logo" src="./asset/img/logo.jpg" />

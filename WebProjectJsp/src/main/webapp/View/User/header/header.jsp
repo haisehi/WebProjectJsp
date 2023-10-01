@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<link href="./asset/css/header.css" rel="stylesheet">
 		<header class="wrapper">
 			<div class="header_section">
 				<!--navbar-->
@@ -8,7 +8,7 @@
 					<ul class="navbar_wrp_item">
 						<!-- logo -->
 						<a href="#"><img class="logo" alt="logo" src="./asset/img/logo.jpg" /></a>
-						<a href="">
+						<a href="index.jsp?quanly=menu">
 							<li class="navbar_item">MENU</li>
 						</a>
 						<a href="index.jsp?quanly=bookAParty">
