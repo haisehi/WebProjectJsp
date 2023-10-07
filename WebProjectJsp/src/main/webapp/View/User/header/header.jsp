@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <link href="./asset/css/header.css" rel="stylesheet">
-		<header class="wrapper">
+		<header class="wrapper_header">
 			<div class="header_section">
 				<!--navbar-->
 				<nav class="navbar_headerLeft">
 					<ul class="navbar_wrp_item">
 						<!-- logo -->
-						<a href="#"><img class="logo" alt="logo" src="./asset/img/logo.jpg" /></a>
+						<a href="index.jsp?quanly=home"><img class="logo" alt="logo" src="./asset/img/logo.jpg" /></a>
 						<a href="index.jsp?quanly=menu">
 							<li class="navbar_item">MENU</li>
 						</a>

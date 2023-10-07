@@ -1,396 +1,334 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<link href="./asset/css/content.css" rel="stylesheet">
-<link href="./asset/css/style.css" rel="stylesheet">
-<link href="./asset/css/header.css" rel="stylesheet">
-<link href="./asset/css/footer.css" rel="stylesheet">
-<!-- swiper css link  -->
-<link rel="stylesheet"
-href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+<meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./asset/css/header.css">
+        <link rel="stylesheet" href="./asset/css/footer.css">
+        <link rel="stylesheet" href="./asset/css/menu.css">
+        <!-- font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+            integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+            crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<!-- font awesome -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
-		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
-		crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Header -->
 	<jsp:include page="../header/header.jsp"/>
-      
-
-
-      <div class="Wrapper_menu">
-	<div class="header">
-	     <!-- Navbar Start  -->
-     <section class="navbar " style="padding: 1rem 10%;" >
-      <ul>
-         <li><a href="#combo1"> Ưu đãi</a></li>
-         <li><a href="#combo2">Món mới</a></li>
-         <li><a href="#combo3">Combo 1 người </a></li>
-         <li><a href="#combo4">Combo nhóm </a></li>
-         <li><a href="#combo5">Gà rán - gà quay </a></li>
-         <li><a href="#combo6"> Thức ăn nhẹ</a></li>
-         <li><a href="#combo7"> Thức uống </a></li>
-       </ul>
-     </section>
-      <!-- Navbar End  -->
 	
-	</div>
+<!-- content -->
+        <div class="menu">
+            <ul class="menu_nav">
+                <li class="menu_nav-itemt" class="home-active"><a href="#hotdeals">HOT DEALS</a></li>
+                <li class="menu_nav-itemt"><a href="#newproduct">NEW PRODUCTS</a></li>
+                <li class="menu_nav-itemt"><a href="#SNACK">SNACK</a></li>
+                <li class="menu_nav-itemt"><a href="#DESSERTDRINKS">DESSERT & DRINKS</a></li>
+                <li class="menu_nav-itemt"><a href="#FRIEDROASTED">FRIED & ROASTED</a></li>
+                <li class="menu_nav-itemt"><a href="#CHICKEN">CHICKEN</a></li>
+            </ul>
+        </div>
+        <div class="wrapper_content">
+            <div class="content_home">
+                <section class="food" id="hotdeals">
+                    <h2 class="heading">HOT DEALS</h2>
+                    <!-- movies conatiner -->
+                    <div class="food-container">
+                        <!-- box 1 -->
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                </section>
+                <section class="food" id="newproduct">
+                    <h2 class="heading">NEW PRODUCT</h2>
+                    <!-- movies conatiner -->
+                    <div class="food-container">
+                        <!-- box 1 -->
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                </section>
+                <section class="food" id="SNACK">
+                    <h2 class="heading">SNACK</h2>
+                    <!-- movies conatiner -->
+                    <div class="food-container">
+                        <!-- box 1 -->
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                </section>
+                <section class="food" id="DESSERTDRINKS">
+                    <h2 class="heading">DESSERT DRINKS</h2>
+                    <!-- movies conatiner -->
+                    <div class="food-container">
+                        <!-- box 1 -->
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                </section>
+                <section class="food" id="FRIEDROASTED">
+                    <h2 class="heading">FRIED ROASTED</h2>
+                    <!-- movies conatiner -->
+                    <div class="food-container">
+                        <!-- box 1 -->
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                </section>
 
-
-      <!-- home packages section starts  -->
-      
-      <section id="combo1" class="home-packages">
-      
-        <h1  class="heading-title" style=""> Ưu Đãi  </h1>
-
-         <div class="box-container">
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 1</h2>
-
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
+                <section class="food" id="CHICKEN">
+                    <h2 class="heading">CHICKEN</h2>
+                    <!-- movies conatiner -->
+                    <div class="food-container">
+                        <!-- box 1 -->
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                        <div class="box">
+                            <div class="box-img">
+                                <img src="./asset/img/home-menu-1.jpg" alt="">
+                            </div>
+                            <div class="box_price_title">
+                                <h3 class="title_product">Combo Happy</h3>
+                                <h3 class="price_product">65,000đ</h3>
+                            </div>
+                            <span class="content_product">2 Fried Chicken + 1 Pepsi Can</span>
+                            <button class="food-button_product">Add</button>
+                        </div>
+                </section>
             </div>
+        </div>
 
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-2.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 2</h2>
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-3.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 3</h2>
-                  <p style="text-align: left;"> 
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-         </div>
-
-         <h1 id="combo2" class="heading-title" style="margin-top: 20px;"> Món mới  </h1>
-
-         <div class="box-container">
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 1</h2>
-
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 2</h2>
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 3</h2>
-                  <p style="text-align: left;"> 
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-         </div>
-
-         <!-- 3 ne  -->
-         <h1 id="combo3" class="heading-title" style="margin-top: 20px;"> Combo 1 nguời  </h1>
-
-         <div class="box-container">
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 1</h2>
-
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 2</h2>
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 3</h2>
-                  <p style="text-align: left;"> 
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-         </div>
-
-         <!-- 4 ne  -->
-         <h1 id="combo4" class="heading-title" style="margin-top: 20px;"> Combo nhóm  </h1>
-
-         <div class="box-container">
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 1</h2>
-
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 2</h2>
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 3</h2>
-                  <p style="text-align: left;"> 
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-         </div>
-
-         <!-- 5 ne -->
-         <h1 id="combo5" class="heading-title" style="margin-top: 20px;"> Gà rán - gà quay  </h1>
-
-         <div class="box-container">
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 1</h2>
-
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 2</h2>
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 3</h2>
-                  <p style="text-align: left;"> 
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-         </div>
-
-         
-         <!-- 7 ne  -->
-         <h1 id="combo6" class="heading-title" style="margin-top: 20px;"> thức ăn nhẹ </h1>
-
-         <div class="box-container">
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 1</h2>
-
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 2</h2>
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 3</h2>
-                  <p style="text-align: left;"> 
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-         </div>
-
-         <!-- 8 ne  -->
-         <h1 id="combo7" class="heading-title" style="margin-top: 20px;"> thức uống</h1>
-
-         <div class="box-container">
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 1</h2>
-
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 2</h2>
-                  <p style="text-align: left;">
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-               </div>
-            </div>
-
-            <div class="box">
-               <div class="image">
-                  <img style="cursor: pointer;" src="./asset/img/home-combo-1.jpg" alt>
-               </div>
-               <div class="content">
-                  <h2>Combo nhóm 3</h2>
-                  <p style="text-align: left;"> 
-                     3 Miếng Gà + 1 Burger Zinger/Burger Tôm/Burger Phi-lê Gà Quay + 2 Lon pepsi
-                  </p>
-                  <a href="#" class="btn">Thêm</a>
-
-               </div>
-            </div>
-
-         </div>
-      </section>
-      </div>
-
-      <!-- home packages section ends -->
-
-     
-
-      <!-- swiper js link  -->
-      <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-      <!-- custom js file link  -->
-      <script src="js/script.js"></script>
-
-      <jsp:include page="../footer/footer.jsp"/>
+<!-- footer -->
+	<jsp:include page="../footer/footer.jsp"/>

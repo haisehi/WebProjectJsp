@@ -24,6 +24,9 @@
     else if(click.equals("menu")){
     	request.getRequestDispatcher("menu.jsp").forward(request, response);
     }
+    else if(click.equals("home")){
+    	request.getRequestDispatcher("home.jsp").forward(request, response);
+    }
     
     else {
         request.getRequestDispatcher("home.jsp").forward(request, response);

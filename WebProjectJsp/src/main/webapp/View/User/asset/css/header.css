@@ -14,13 +14,18 @@ a{
 }
 :root{
     --white-color: white;
+    --grey:#ccc;
     --logo-size: 4.063rem;
 }
-.wrapper {
+.wrapper_header {
     width: 100%;
     min-height: 6.25rem;
     border-bottom-style: solid;
-    border-bottom-color: #ccc;
+    border-bottom-color: var(--grey);
+    background-color: var(--white-color);
+    position: fixed;
+    top: 0;
+    z-index: 10;
 }
 .header_section{
     background-color: var(--white-color);
