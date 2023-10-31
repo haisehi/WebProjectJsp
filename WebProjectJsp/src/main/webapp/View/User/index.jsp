@@ -18,7 +18,7 @@
 </head>
 <body>
 
-	<jsp:include page="content/content.jsp"/>
+	
 
 </body>
 </html>

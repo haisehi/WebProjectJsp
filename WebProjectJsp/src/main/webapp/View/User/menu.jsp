@@ -11,7 +11,7 @@
             crossorigin="anonymous" referrerpolicy="no-referrer" />
 
 <!-- Header -->
-	<jsp:include page="../header/header.jsp"/>
+	<jsp:include page="header/header.jsp"/>
 	
 <!-- content -->
         <div class="menu">
@@ -331,4 +331,4 @@
         </div>
 
 <!-- footer -->
-	<jsp:include page="../footer/footer.jsp"/>
+	<jsp:include page="footer/footer.jsp"/>

@@ -10,7 +10,7 @@
 		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Header -->
-<jsp:include page="../header/header.jsp"/>
+<jsp:include page="header/header.jsp"/>
 	
 <div class="wrapper_book">
     <section class="content">
@@ -205,7 +205,7 @@
     </section>
   </div>
 <!-- footer -->
-	<jsp:include page="../footer/footer.jsp"/>
+	<jsp:include page="footer/footer.jsp"/>
 
 <!-- Javascript -->
 <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>

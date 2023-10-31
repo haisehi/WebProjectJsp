@@ -1,22 +1,13 @@
-body {
-    font-family: sans-serif;
-    font-size: 16px;
-    color: #333;
-  }
-  
-  header {
-    background-color: #000;
-    color: #fff;
-    padding: 20px;
-  }
+
   
   h1 {
     font-size: 24px;
     font-weight: bold;
   }
-section{
+.wrapper_cttk{
     width: 80%;
     margin: auto;
+    margin-top: 145px;
     padding-top: 30px;
     display: flex;
     height: 550px;
@@ -29,7 +20,7 @@ section{
    
 }
 
-img{
+.img_user{
     width: 130px;
     padding-top: 50px;
     padding-left: 50px;
@@ -68,7 +59,7 @@ input, textarea, select {
 select{
     width: 103%;
 }
-button{
+.btn-datngay{
     background-color: rgb(221, 0, 0);
     color: #fff;
     font-weight: bold;

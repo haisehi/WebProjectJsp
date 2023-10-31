@@ -10,9 +10,9 @@
 /* login and sign up*/
 .wrapper_loginOrSignUp{
 	display: flex;
-	height: 110vh;
+	height: 135vh;
 	justify-content: center;
-	margin-top: 120px;
+	margin-top: 100px;
 	
 }
 .img_login{

@@ -9,7 +9,7 @@
 		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
 		crossorigin="anonymous" referrerpolicy="no-referrer" />
 <!-- Header -->
-	<jsp:include page="../header/header.jsp"/>
+	<jsp:include page="header/header.jsp"/>
 
 
 
@@ -57,4 +57,4 @@
         
     </div> 
 <!-- footer -->
-	<jsp:include page="../footer/footer.jsp"/>
+	<jsp:include page="footer/footer.jsp"/>
