@@ -1,0 +1,78 @@
+
+.body-left{
+    background-color:rgb(120, 120, 120);
+    width: 20%;
+    float: left;
+    height: 715px;
+}
+.body-left a{
+    text-decoration: none;
+    list-style-type: none;
+    color: #000;
+    font-size: 20px;
+}
+.body-left .menu{
+    padding-top: 20px;
+    list-style-type: none;
+}
+.menu-dacap {
+    display: none;
+}
+.body-left li:hover {
+    .menu-dacap{
+        display: block;
+    }  
+}
+
+.body-left li{
+    padding-top: 20px;
+    list-style-type: none;
+}
+.body-left h2{
+    padding-top: 20px;
+    padding-left: 40px;
+}
+
+.body-right {
+    background-color: #000;
+    height: 715px;
+    
+}
+.body-right .header{
+    background-color: rgb(120, 120, 120);
+    
+}
+
+.body-right .body .content{
+    padding-left: 400px;
+}
+.body-right .body p{
+    font-size: 20px;
+    padding-top: 20px;
+    color: aliceblue;
+    
+}
+.body-right .body .content .content-left{
+    float: left;
+    margin-left: 100px;
+}
+.body-right .body .content .content-right{
+    float: left;
+    padding-left: 100px;
+}
+.body-right .body .bnt .Add-bnt{
+    width: 20%;
+    margin-top: 400px;
+    margin-left: 5%;
+    margin-bottom: 20px;
+    height: 35px;
+    font-weight: bold;
+    font-size: 17px;
+    border-radius: 10px;
+    background-color: red;
+    border: 1px solid;
+    cursor: pointer;
+    color: rgb(255, 255, 255);
+    float: right;
+    margin-right: 50px;
+}
