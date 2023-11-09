@@ -13,7 +13,7 @@
 <div class="wrapper_loginOrSignUp">
 	<img src="./asset/img/signin.jpg" alt="signIn" class="img_login" >
 	<div class="form">
-		<form method="POST" class="form_account" action="${pageContext.request.contextPath}/login">
+		<form method="POST" class="form_account" action="${pageContext.request.contextPath}/userController">
 			<label class="label_account">login</label>
 			<div class="label-form_account">
 				<input type="text" id="" class="input-form_account" name="email" required/>
@@ -24,7 +24,7 @@
 				<label id="" for="" class="label_input">Password:</label>
 			</div>
 			<p class="forgot_pwd font-form_account js-forgot-pass"><a href="#">Forgot Your Password?</a></p>
-			<input type="submit" class="button_account" name="submit" value="Login"/>
+			<input type="submit" class="button_account" name="action" value="login"/>
 			<p class="font-form_account font-signin">Have'nt got an account? <a href="SignUp.jsp" class="">Sign Up</a></p>
 		</form>
 	</div>

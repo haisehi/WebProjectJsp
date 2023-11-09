@@ -19,7 +19,7 @@
     <div class="wrapper_loginOrSignUp">
         <img src="./asset/img/signin.jpg" alt="signUp" class="img_login"/>
         <div class="form">
-            <form method="POST" class="form_account" action="${pageContext.request.contextPath}/signup">
+            <form method="POST" class="form_account" action="${pageContext.request.contextPath}/userController">
                 <label class="label_account">CREATE YOUR ACCOUNT</label>
                 <div class="label-form_account">
                     <input type="text" id="firstName" class="input-form_account" name="firstname" required/>
@@ -52,8 +52,8 @@
                 <p class="font-form_account">
                     <input type="checkbox" id="acceptPolicy" name="acceptPolicy"/>I have read and accepted with Operation Policy and Policy on Information Confidentiality
                 </p>
-                <input type="submit" class="button_account_signup" name="submit" value="Create My Account">
-                <p class="font-form_account font-signin">Already have an account? <a href="index.jsp?quanly=login" class="">Sign In</a></p>
+                <input type="submit" class="button_account_signup" name="action" value="signup">
+                <p class="font-form_account font-signin">Already have an account? <a href="login.jsp" class="">Sign In</a></p>
             </form>
         </div>
     </div>

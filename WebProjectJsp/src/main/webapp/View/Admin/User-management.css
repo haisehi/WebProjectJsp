@@ -1,85 +1,138 @@
+/* Reset CSS styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-.body-left{
-    background-color:rgb(120, 120, 120);
+/* Body styles */
+body {
+    background-color: #fff; /* Trắng cho nền body */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: flex;
+}
+
+/* Left side styles */
+.body-left {
+    background-color: #ff0000; /* Màu đỏ cho nền left side */
     width: 20%;
     float: left;
-    height: 715px;
+    height: 100vh; /* Sử dụng chiều cao 100% của màn hình */
+    padding: 20px;
 }
-.body-left a{
+
+.body-left a {
     text-decoration: none;
     list-style-type: none;
-    color: #000;
+    color: #fff; /* Màu trắng cho text */
     font-size: 20px;
+    display: block;
+    padding: 10px 0;
 }
-.body-left .menu{
-    padding-top: 20px;
-    list-style-type: none;
+
+.body-left ul {
+    list-style: none;
 }
+
 .menu-dacap {
     display: none;
 }
-.body-left li:hover {
-    .menu-dacap{
-        display: block;
-    }  
+
+.body-left li:hover .menu-dacap {
+    display: block;
 }
 
-.body-left li{
-    padding-top: 20px;
-    list-style-type: none;
-}
-.body-left h2{
-    padding-top: 20px;
-    padding-left: 40px;
-}
-
-.body-right {
-    background-color: #000;
-    height: 715px;
-    
-}
-.body-right .header{
-    background-color: rgb(120, 120, 120);
-    
-}
-
-.body-right .body .content{
-    padding-left: 400px;
-}
-.body-right .body p{
-    font-size: 20px;
-    padding-top: 20px;
-    color: aliceblue;
-    
-}
-.body-right .body .content .content-left{
-    float: left;
-    margin-left: 100px;
-}
-.body-right .body .content .content-right{
-    float: left;
-    padding-left: 100px;
-}
-.body-right .body .bnt .Add-bnt{
-    width: 20%;
-    margin-top: 50px;
-    margin-left: 5%;
+.body-left h2 {
+    color: #fff; /* Màu trắng cho tiêu đề */
+    font-size: 24px;
     margin-bottom: 20px;
+}
+
+/* Right side styles */
+.body-right {
+    background-color: #fff;
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.header {
+    background-color: #ff0000; /* Màu đỏ cho header */
+    text-align: center;
+    padding: 10px 0;
+}
+
+.body {
+    padding: 20px;
+}
+
+.content p {
+    font-size: 18px;
+    color: #ff0000; /* Màu đỏ cho text */
+    margin-bottom: 20px;
+}
+
+content-right {
+    float: left;
+    margin-right: 20px;
+}
+
+bnt {
+    text-align: center;
+    padding: 20px 0;
+}
+
+.Add-bnt {
+    width: 20%;
     height: 35px;
     font-weight: bold;
     font-size: 17px;
+    border: none;
     border-radius: 10px;
-    background-color: red;
-    border: 1px solid;
+    background-color: #ff0000; /* Màu đỏ cho button */
     cursor: pointer;
-    color: rgb(255, 255, 255);
-    float: right;
-    margin-right: 50px;
+    color: #fff; /* Màu trắng cho text */
 }
-.body-right .body .content .content-right input{
-    width: 500px;
-    height: 20px;
+
+input[type="text"],
+input[type="number"],
+select {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
 }
-.content-left p{
-    margin-top: 24px;
+
+input[type="date"] {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+textarea {
+    width: 100%;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    width: 20%;
+    height: 35px;
+    font-weight: bold;
+    font-size: 17px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ff0000; /* Màu đỏ cho button */
+    cursor: pointer;
+    color: #fff; /* Màu trắng cho text */
 }
