@@ -75,14 +75,7 @@ if (session.getAttribute("username") == null) {
 								<input type="file" id="name_categories" name="image_categories">
 							</p>
 							<p>
-								<select id="image_categories" name="name_categories">
-									<option value="HOT DEALS">HOT DEALS</option>
-									<option value="NEW PRODUCTS">NEW PRODUCTS</option>
-									<option value="SNACK">SNACK</option>
-									<option value="DESSERT & DRINKS">DESSERT & DRINKS</option>
-									<option value="FRIED & ROASTED">FRIED & ROASTED</option>
-									<option value="CHICKEN">CHICKEN</option>
-								</select>
+								<input type="text" id="name_categories" name="name_categories">
 							</p>
 						</div>
 

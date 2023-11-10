@@ -1,5 +1,18 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="Demo.CategoryFoodDAO"%>
+<%@ page import="java.util.List"%>
+<%@ page import="Model.CategoryFood"%>
+
+<%@ page import="Demo.FoodDAO"%>
+<%@ page import="Model.Food"%>
+<%
+CategoryFoodDAO categoryFoodDAO = new CategoryFoodDAO();
+List<CategoryFood> categories = categoryFoodDAO.getAllCategories();
+FoodDAO foodDAO = new FoodDAO();
+List<Food> foods = foodDAO.getLimitedFoods(8);
+%>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href=".asset/css/header.css">
@@ -46,79 +59,48 @@
 			<!-- movies conatiner -->
 			<div class="food-container">
 				<!-- box 1 -->
-				<div class="box">
-					<div class="box-img">
-						<img src="./asset/img/home-menu-1.jpg" alt="">
+				<%
+				for (CategoryFood category : categories) {
+				%>
+				<a
+					href="<%=String.format("menu.jsp?id=#%s", category.getId_categories())%>">
+					<div class="box">
+						<div class="box-img">
+							<img
+								src="${pageContext.request.contextPath}/View/img/<%=category.getImage_categories()%>"
+								alt="<%=category.getImage_categories()%>">
+						</div>
+						<div class="box_price_title">
+							<h3 class="title_product"><%=category.getName_categories()%></h3>
+						</div>
 					</div>
-					<div class="box_price_title">
-						<h3 class="title_product">Combo Happy</h3>
-					</div>
-
-				</div>
-				<div class="box">
-					<div class="box-img">
-						<img src="./asset/img/home-menu-1.jpg" alt="">
-					</div>
-					<div class="box_price_title">
-						<h3 class="title_product">Combo Happy</h3>
-					</div>
-				</div>
-				<div class="box">
-					<div class="box-img">
-						<img src="./asset/img/home-menu-1.jpg" alt="">
-					</div>
-					<div class="box_price_title">
-						<h3 class="title_product">Combo Happy</h3>
-					</div>
-				</div>
-				<div class="box">
-					<div class="box-img">
-						<img src="./asset/img/home-menu-1.jpg" alt="">
-					</div>
-					<div class="box_price_title">
-						<h3 class="title_product">Combo Happy</h3>
-					</div>
-				</div>
-				<!-- box 1 -->
-				<div class="box">
-					<div class="box-img">
-						<img src="./asset/img/home-menu-1.jpg" alt="">
-					</div>
-					<div class="box_price_title">
-						<h3 class="title_product">Combo Happy</h3>
-					</div>
-
-				</div>
+				</a>
+				<%
+				}
+				%>
+			</div>
 		</section>
 		<section class="food" id="hotdeals">
 			<h2 class="heading">WE THINK YOU’LL LOVE THESE</h2>
 			<!-- movies conatiner -->
 			<div class="food-container">
 				<!-- box 1 -->
+									<%
+					for (Food food : foods) {
+					%>
 				<div class="box">
 					<div class="box-img">
-						<img src="./asset/img/home-menu-1.jpg" alt="">
+						<img src="${pageContext.request.contextPath}/View/img/<%=food.getImage_food()%>" alt="">
 					</div>
 					<div class="box_price_title">
-						<h3 class="title_product">Combo Happy</h3>
+						<h3 class="title_product"><%=food.getName_food()%></h3>
 					</div>
 
 				</div>
-				<div class="box">
-					<div class="box-img">
-						<img src="./asset/img/home-menu-1.jpg" alt="">
-					</div>
-					<div class="box_price_title">
-						<h3 class="title_product">Combo Happy</h3>
-					</div>
-				</div>
-				<div class="box">
-					<div class="box-img">
-						<img src="./asset/img/home-menu-1.jpg" alt="">
-					</div>
-					<div class="box_price_title">
-						<h3 class="title_product">Combo Happy</h3>
-					</div>
+					<%
+					}
+					%>
+
 				</div>
 		</section>
 	</div>

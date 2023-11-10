@@ -61,28 +61,18 @@ button:hover {
 <body>
 	<form method="post"
 		action="${pageContext.request.contextPath}/categoryFoodController">
-		<input type="hidden" name="action" value="update"> <input
-			type="hidden" name="id_categories" value="${category.id_categories}">
+		<input type="hidden" name="action" value="update"> 
+		<input
+			type="hidden" 
+			name="id_categories" 
+			value="${category.id_categories}">
 
-		<label for="name_categories">Category:</label> <select
-			id="name_categories" name="name_categories">
-			<option value="HOT DEALS"
-				${category.name_categories eq 'HOT DEALS' ? 'selected' : ''}>HOT
-				DEALS</option>
-			<option value="NEW PRODUCTS"
-				${category.name_categories eq 'NEW PRODUCTS' ? 'selected' : ''}>NEW
-				PRODUCTS</option>
-			<option value="SNACK"
-				${category.name_categories eq 'SNACK' ? 'selected' : ''}>SNACK</option>
-			<option value="DESSERT & DRINKS"
-				${category.name_categories eq 'DESSERT & DRINKS' ? 'selected' : ''}>DESSERT
-				& DRINKS</option>
-			<option value="FRIED & ROASTED"
-				${category.name_categories eq 'FRIED & ROASTED' ? 'selected' : ''}>FRIED
-				& ROASTED</option>
-			<option value="CHICKEN"
-				${category.name_categories eq 'CHICKEN' ? 'selected' : ''}>CHICKEN</option>
-		</select> <label for="image_categories">Image:</label> <input type="file"
+		<label for="name_categories">Category:</label> 
+		<input type="text"
+			id="name_categories" name="name_categories"> 
+			<label
+			for="image_categories">Image:</label> 
+			<input type="file"
 			id="image_categories" name="image_categories"
 			value="${category.image_categories}">
 

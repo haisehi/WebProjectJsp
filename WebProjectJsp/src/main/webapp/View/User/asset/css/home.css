@@ -95,8 +95,9 @@ html::-webkit-scrollbar-thumb{
     height: 95.99%;
 }
 .box_price_title{
-    display: flex;
-    justify-content: space-between;
+display: flex;
+    justify-content: space-around;
+    font-size: 18px;
 }
 .content_product{
     font-size: 13px;
