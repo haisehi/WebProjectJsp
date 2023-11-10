@@ -28,11 +28,10 @@ if (session.getAttribute("username") == null) {
 			<ul>
 				<form method="post"
 					action="${pageContext.request.contextPath}/Admin">
-					<input type="hidden" name="action" value="logout"> 
-					<button type="submit" 
-					style="color: #fff; background-color: transparent; border: none; text-decoration: underline; cursor: pointer;">
-					<img src="img/plus.png" alt=""
-						style="width: 10px; color: black;">
+					<input type="hidden" name="action" value="logout">
+					<button type="submit"
+						style="color: #fff; background-color: transparent; border: none; text-decoration: underline; cursor: pointer;">
+						<img src="img/plus.png" alt="" style="width: 10px; color: black;">
 						Logout
 					</button>
 				</form>
@@ -125,17 +124,18 @@ if (session.getAttribute("username") == null) {
 								<form method="post"
 									action="${pageContext.request.contextPath}/categoryFoodController">
 									<input type="hidden" name="id_categories"
-										value="<%=category.getId_categories()%>">
-									<button class="Add-bnt" type="submit" name="action"
-										value="update">UPDATE</button>
-								</form>
+										value="<%=category.getId_categories()%>"> <input
+										type="hidden" name="action" value="edit">
+									<button class="change-btn" type="submit">EDIT</button>
+								</form> <!-- Inside the loop where you display categories -->
 								<form method="post"
-									action="${pageContext.request.contextPath}/deleteCategoryFood">
+									action="${pageContext.request.contextPath}/categoryFoodController">
 									<input type="hidden" name="id_categories"
-										value="<%=category.getId_categories()%>">
-									<button class="Add-bnt" type="submit" name="submit"
-										value="DELETE">DELETE</button>
+										value="<%=category.getId_categories()%>"> <input
+										type="hidden" name="action" value="delete">
+									<button class="change-btn" type="submit">DELETE</button>
 								</form>
+
 							</td>
 						</tr>
 						<%

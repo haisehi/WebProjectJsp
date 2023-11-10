@@ -1,5 +1,12 @@
+<%@page import="Demo.FoodDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="Demo.FoodDAO"%>
+<%@ page import="java.util.List"%>
+<%@ page import="Model.Food"%>
+<%@ page import="Demo.CategoryFoodDAO"%>
+
+<%@ page import="Model.CategoryFood"%>
 <%
 // Kiểm tra nếu người dùng chưa đăng nhập, thì chuyển hướng về trang đăng nhập
 if (session.getAttribute("username") == null) {
@@ -60,37 +67,100 @@ if (session.getAttribute("username") == null) {
 					<div class="content-left">
 						<p>Select the image:</p>
 						<p>Enter the name of food:</p>
-						<p>Enter the description:</p>
-						<p style="padding-top: 120px;">Enter the price:</p>
-						<p>Show the extra lists:</p>
+						<p>Enter the price:</p>
+						<p>Enter Category:</p>
+
 					</div>
 
 					<div class="content-right">
-						<form action="addFoodServlet" method="post"
-							enctype="multipart/form-data">
-							<p>
-								<input type="file" name="fileInput" id="file-input">
-							</p>
-							<p>
-								<input type="text" name="nameOfFood" placeholder="name of food">
-							</p>
-							<p>
-								<textarea name="description" id="description" cols="30"
-									rows="10" placeholder="description"
-									style="width: 100%; height: 100px; resize: none;"></textarea>
-							</p>
-							<p>
-								<input type="number" step="0.01" name="price"
-									placeholder="price">
-							</p>
-							<p>Show the extra lists (Add your code here if necessary):</p>
+						<form method="post"
+							action="${pageContext.request.contextPath}/foodController">
+							<div>
+								<p>
+									<input type="file" name="image_food" id="file-input">
+								</p>
+								<p>
+									<input type="text" name="name_food" placeholder="name of food">
+								</p>
+								<p>
+									<input type="number" step="0.01" name="price"
+										placeholder="price">
+								</p>
+								<p>
+									<!-- Add this part for the category dropdown -->
+									<label for="category"></label> <select id="category"
+										name="id_categories">
+										<%
+										CategoryFoodDAO categoryFoodDAO = new CategoryFoodDAO();
+										List<CategoryFood> categories = categoryFoodDAO.getAllCategories();
+										for (CategoryFood category : categories) {
+										%>
+										<option value="<%=category.getId_categories()%>"><%=category.getName_categories()%></option>
+										<%
+										}
+										%>
+									</select>
+								</p>
+							</div>
+
+							<div class="bnt">
+								<center>
+									<button class="Add-bnt" type="submit" name="action" value="add">ADD</button>
+								</center>
+							</div>
 						</form>
 					</div>
-				</div>
-				<div class="bnt">
-					<center>
-						<button class="Add-bnt" type="submit">ADD</button>
-					</center>
+					<div id="Result">
+						<table border="1">
+							<thead>
+								<tr>
+									<th>ID</th>
+									<th>Name</th>
+									<th>Image</th>
+									<th>price</th>
+									<th>Name_Category</th>
+									<th>Action</th>
+								</tr>
+							</thead>
+							<tbody>
+								<%
+								FoodDAO foodDAO = new FoodDAO();
+								List<Food> foods = foodDAO.getAllFoods();
+
+								for (Food food : foods) {
+								%>
+								<tr>
+									<td><%=food.getId_food()%></td>
+									<td><%=food.getName_food()%></td>
+									<td><img
+										src="${pageContext.request.contextPath}/View/img/<%=food.getImage_food()%>"
+										alt="<%=food.getImage_food()%>"
+										style="max-width: 100px; max-height: 100px;"></td>
+									<td><%=food.getPrice()%></td>
+									<td><%=food.getId_categories()%></td>
+									<td>
+										<form method="post"
+											action="${pageContext.request.contextPath}/foodController">
+											<input type="hidden" name="id_food"
+												value="<%=food.getId_food()%>"> <input type="hidden"
+												name="action" value="edit">
+											<button class="change-btn" type="submit">EDIT</button>
+										</form>
+										<form method="post"
+											action="${pageContext.request.contextPath}/foodController">
+											<input type="hidden" name="id_food"
+												value="<%=food.getId_food()%>"> <input type="hidden"
+												name="action" value="delete">
+											<button class="change-btn" type="submit">DELETE</button>
+										</form>
+									</td>
+								</tr>
+								<%
+								}
+								%>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>

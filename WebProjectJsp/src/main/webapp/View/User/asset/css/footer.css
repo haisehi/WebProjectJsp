@@ -35,3 +35,25 @@
 	margin: 0 250px;
     color: #fff;
 }
+
+/* Responsive Web Design */
+@media screen and (max-width: 768px) {
+    .wrapper_footer {
+        padding: 50px 20px;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .wrapper_footer-item {
+        margin: 20px 0;
+    }
+
+    .wrapper_footer-item span {
+        font-size: 1.5rem;
+    }
+
+    .copyright p {
+        margin: 0 20px;
+    }
+}

@@ -72,3 +72,36 @@ a{
     background-color: transparent;
     border: none;
 }
+
+/* header.css */
+
+/* ... (CSS code mà bạn đã có) ... */
+
+/* Responsive Web Design */
+@media screen and (max-width: 768px) {
+    .header_section {
+        margin: 0 20px;
+    }
+
+    .navbar_headerLeft {
+        width: 50%;
+    }
+
+    .navbar_headerRight {
+        width: 50%;
+        justify-content: space-between;
+    }
+
+    .navbar_wrp_item {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .navbar_item {
+        margin-bottom: 10px;
+    }
+
+    .icon_navbarHeaderRight {
+        font-size: 1.25rem;
+    }
+}

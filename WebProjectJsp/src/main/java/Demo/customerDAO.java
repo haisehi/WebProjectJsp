@@ -9,17 +9,15 @@ import Model.Customer;
 
 public class customerDAO {
 
-	private String jdbcURL = "jdbc:mysql://localhost:3306/databasejsp";
-    private String jdbcUsername = "root";
-    private String jdbcPassword = "";
 
     private static final String INSERT_CUSTOMER_SQL = "INSERT INTO customer (firstname, lastname, phonenumber, email, gender, date, password) VALUES (?, ?, ?, ?, ?, ?, ?)";
-
+    private static final String VALIDATE_CUSTOMER_SQL = "SELECT email FROM customer WHERE email = ? AND password = ?";
+    
     public int registerCustomer(Customer  customer) throws ClassNotFoundException {
     	Class.forName("com.mysql.cj.jdbc.Driver");
         int result = 0;
 
-        try (Connection connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+        try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(INSERT_CUSTOMER_SQL)) {
 
             preparedStatement.setString(1, customer.getFirstname());
@@ -39,11 +37,10 @@ public class customerDAO {
         return result;
     }
     
-    private static final String VALIDATE_CUSTOMER_SQL = "SELECT email FROM customer WHERE email = ? AND password = ?";
 
     public boolean validate(String email, String password) throws ClassNotFoundException {
     	Class.forName("com.mysql.cj.jdbc.Driver");
-        try (Connection connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+        try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(VALIDATE_CUSTOMER_SQL)) {
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
@@ -62,7 +59,7 @@ public class customerDAO {
         String customerName = null;
 
 
-        try (Connection connection = DriverManager.getConnection(jdbcURL, jdbcUsername, jdbcPassword);
+        try (Connection connection = DatabaseConnection.getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement("SELECT firstname FROM customer WHERE email = ?")) {
             preparedStatement.setString(1, email);
 

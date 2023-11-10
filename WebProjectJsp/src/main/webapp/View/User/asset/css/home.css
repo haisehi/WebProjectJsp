@@ -101,3 +101,38 @@ html::-webkit-scrollbar-thumb{
 .content_product{
     font-size: 13px;
 }
+
+/* Responsive Web Design */
+@media screen and (max-width: 768px) {
+    .wrapper_content {
+        margin-bottom: 50px;
+    }
+
+    .content_swiper {
+        height: 400px;
+    }
+
+    .swiper-button-next, .swiper-button-prev {
+        height: 30px;
+        width: 30px;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 16px;
+    }
+
+    .swiper-slide img {
+        height: auto;
+    }
+
+    .food-container {
+        grid-template-columns: repeat(auto-fit, minmax(150px, auto));
+    }
+
+    .box {
+        height: 250px;
+    }
+
+    .box .box-img {
+        height: 180px;
+    }
+}

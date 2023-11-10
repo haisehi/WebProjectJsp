@@ -92,6 +92,7 @@ bnt {
     padding: 20px 0;
 }
 
+.change-btn ,
 .Add-bnt {
     width: 20%;
     height: 35px;
@@ -102,6 +103,11 @@ bnt {
     background-color: #ff0000; /* Màu đỏ cho button */
     cursor: pointer;
     color: #fff; /* Màu trắng cho text */
+}
+
+.change-btn{
+	width: 40%;
+	margin: 2px 0;
 }
 
 select {
