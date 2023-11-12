@@ -1,10 +1,17 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
 <%@ page import="Demo.CategoryFoodDAO"%>
 <%@ page import="java.util.List"%>
 <%@ page import="Model.CategoryFood"%>
 <%@ page import="Demo.FoodDAO"%>
 <%@ page import="Model.Food"%>
+<%@ page import="Model.Customer"%>
+<%@ page import="javax.servlet.http.HttpSession"%>
+<%
+HttpSession userSession = request.getSession(false);
+String email = (String) userSession.getAttribute("email");
+%>
 <%
 // Sau khi thêm danh mục mới, lấy danh sách danh mục và hiển thị
 CategoryFoodDAO categoryFoodDAO = new CategoryFoodDAO();
@@ -31,10 +38,9 @@ FoodDAO foodDAO = new FoodDAO();
 	<ul class="menu_nav">
 		<%
 		for (CategoryFood category : categories) {
-		    int categoryId = category.getId_categories(); // Get the category ID dynamically
+			int categoryId = category.getId_categories(); // Get the category ID dynamically
 		%>
-		<li class="menu_nav-itemt">
-		<a href="#<%=categoryId%>"><%=category.getName_categories()%></a>
+		<li class="menu_nav-itemt"><a href="#<%=categoryId%>"><%=category.getName_categories()%></a>
 		</li>
 		<%
 		}
@@ -45,8 +51,8 @@ FoodDAO foodDAO = new FoodDAO();
 	<div class="content_home">
 		<%
 		for (CategoryFood category : categories) {
-		    int categoryId = category.getId_categories(); // Get the category ID dynamically
-		    List<Food> foods = foodDAO.getAllFoodsCategory(categoryId);
+			int categoryId = category.getId_categories(); // Get the category ID dynamically
+			List<Food> foods = foodDAO.getAllFoodsCategory(categoryId);
 		%>
 		<section class="food" id="<%=categoryId%>">
 			<h2 class="heading"><%=category.getName_categories()%></h2>
@@ -55,16 +61,37 @@ FoodDAO foodDAO = new FoodDAO();
 				<%
 				for (Food food : foods) {
 				%>
+
 				<div class="box">
 					<div class="box-img">
-						<img src="${pageContext.request.contextPath}/View/img/<%=food.getImage_food()%>" alt="<%=food.getImage_food()%>">
+						<img
+							src="${pageContext.request.contextPath}/View/img/<%=food.getImage_food()%>"
+							alt="<%=food.getImage_food()%>">
 					</div>
 					<div class="box_price_title">
 						<h3 class="title_product"><%=food.getName_food()%></h3>
 						<h3 class="price_product"><%=food.getPrice()%></h3>
 					</div>
 					<span class="content_product"><%=food.getName_food()%></span>
-					<button class="food-button_product">Add</button>
+					
+					<%
+					// Kiểm tra xem có phiên đăng nhập không
+					if (email == null) {
+					%>
+					<button class="food-button_product_empty" type="submit">Add</button>
+					<%
+					} else {
+					// Nếu có phiên đăng nhập, chuyển hướng đến trang chitiettk.jsp
+					%>
+					<form action="${pageContext.request.contextPath}/AddToCartServlet"
+						method="post">
+						<input type="hidden" name="id_food" value="<%=food.getId_food()%>">
+						<button class="food-button_product" type="submit">Add</button>
+					</form>
+					<%
+					}
+					%>
+					
 				</div>
 				<%
 				}

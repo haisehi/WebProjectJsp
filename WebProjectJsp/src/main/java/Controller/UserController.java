@@ -49,9 +49,12 @@ public class UserController extends HttpServlet {
         String password = request.getParameter("password");
 
         try {
-            if (customerDAO.validate(email, password)) {
+            Customer customer = customerDAO.getCustomerByEmail(email);
+
+            if (customer != null && customerDAO.validate(email, password)) {
                 // Đăng nhập thành công, tạo phiên để lưu trạng thái đăng nhập
                 HttpSession session = request.getSession();
+                session.setAttribute("customerId", customer.getId_customer());
                 session.setAttribute("email", email);
                 // Truy vấn tên từ CSDL (giả sử bạn có một phương thức trong DAO để lấy tên)
                 String username = customerDAO.getCustomerName(email);
@@ -67,6 +70,7 @@ public class UserController extends HttpServlet {
             System.out.println("error :" + e.getMessage());
         }
     }
+
 
     private void registerUser(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String firstname = request.getParameter("firstname");

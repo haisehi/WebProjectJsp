@@ -76,6 +76,34 @@ public class customerDAO {
         return customerName;
     }
     
+    public Customer getCustomerByEmail(String email) throws ClassNotFoundException {
+        Customer customer = null;
+
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM customer WHERE email = ?")) {
+            preparedStatement.setString(1, email);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                customer = new Customer();
+                customer.setId_customer(resultSet.getInt("id_customer"));
+                customer.setFirstname(resultSet.getString("firstname"));
+                customer.setLastname(resultSet.getString("lastname"));
+                customer.setPhonenumber(resultSet.getInt("phonenumber"));
+                customer.setEmail(resultSet.getString("email"));
+                customer.setGender(resultSet.getString("gender"));
+                customer.setDate(resultSet.getDate("date"));
+                customer.setPassword(resultSet.getString("password"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return customer;
+    }
+
+    
     private void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
             if (e instanceof SQLException) {

@@ -144,6 +144,18 @@ html::-webkit-scrollbar-thumb {
     font-size: 10px;
 }
 
+.food-button_product_empty {
+    height: 35px;
+    width: 100%;
+    font-size: 20px;
+    border-radius: 30px;
+    border: none;
+    background: rgb(123, 123, 123);
+    color: white;
+    cursor: not-allowed;
+    margin-top: 10px;
+}
+
 .food-button_product {
     height: 35px;
     width: 100%;

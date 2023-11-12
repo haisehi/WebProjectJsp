@@ -1,0 +1,58 @@
+*{
+    scroll-behavior: smooth;
+    text-decoration: none;
+}
+
+
+/* Custom scroll bar */
+html::-webkit-scrollbar {
+    width: 0.5rem;
+    background: #ccc;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 5rem;
+}
+
+/* Content wrapper */
+.wrapper_content {
+    min-height: 100vh;
+    margin-top: 180px;
+    margin-bottom: 120px;
+}
+
+.wrapper_cart {
+	font-family: Arial, sans-serif;
+	margin: 20px;
+	height: 100vh;
+	margin-top: 150px;
+	margin-bottom: 100px;
+}
+
+h1 {
+	color: #333;
+}
+
+table {
+	width: 100%;
+	border-collapse: collapse;
+}
+
+th, td {
+	border: 1px solid #ddd;
+	padding: 8px;
+	text-align: left;
+}
+
+th {
+	background-color: #f2f2f2;
+}
+
+td {
+	background-color: #fff;
+}
+
+p {
+	color: #ff0000;
+}
