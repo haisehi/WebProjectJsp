@@ -19,7 +19,7 @@ html::-webkit-scrollbar-thumb{
 /* swiper */
 .content_swiper {
       position: relative;
-      height: 600px;
+      height: 750px;
     }
 
     .swiper {
@@ -34,13 +34,14 @@ html::-webkit-scrollbar-thumb{
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: 120px 0px 0;
     }
 
     .swiper-slide img {
       display: block;
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: fill;
     }
     .customBtn{
         background-color: rgba(0, 0, 0, 0.8);

@@ -39,6 +39,9 @@ public class UserController extends HttpServlet {
                 case "logout":
                     logoutUser(request, response);
                     break;
+                case "update":
+                    updateUserInfo(request, response);
+                    break;
                 // Add more cases for other actions if needed
             }
         }
@@ -54,12 +57,15 @@ public class UserController extends HttpServlet {
             if (customer != null && customerDAO.validate(email, password)) {
                 // Đăng nhập thành công, tạo phiên để lưu trạng thái đăng nhập
                 HttpSession session = request.getSession();
-                session.setAttribute("customerId", customer.getId_customer());
+                session.setAttribute("id_customer", customer.getId_customer());
                 session.setAttribute("email", email);
                 // Truy vấn tên từ CSDL (giả sử bạn có một phương thức trong DAO để lấy tên)
-                String username = customerDAO.getCustomerName(email);
+                int customerId = customerDAO.getCustomerId(email);
                 // Lưu tên vào phiên
-                session.setAttribute("username", username);
+                session.setAttribute("id_customer", customerId);
+                // Store all customer information in the session
+                session.setAttribute("customer", customer);
+                
                 response.sendRedirect("View/User/chitiettk.jsp"); // Chuyển hướng đến trang chào mừng
             } else {
                 // Đăng nhập thất bại, quay lại trang đăng nhập hoặc hiển thị thông báo lỗi
@@ -106,4 +112,40 @@ public class UserController extends HttpServlet {
         }
         response.sendRedirect("View/User/login.jsp"); // Chuyển hướng đến trang đăng nhập của admin
     }
+    
+    private void updateUserInfo(HttpServletRequest request, HttpServletResponse response) throws IOException {
+        int id_customer = (int) request.getSession().getAttribute("id_customer");
+        String firstname = request.getParameter("firstname");
+        String lastname = request.getParameter("lastname");
+        int phonenumber = Integer.parseInt(request.getParameter("phonenumber"));
+        String gender = request.getParameter("gender");
+        Date date = Date.valueOf(request.getParameter("date"));
+
+        Customer updatedCustomer = new Customer();
+        updatedCustomer.setId_customer(id_customer);
+        updatedCustomer.setFirstname(firstname);
+        updatedCustomer.setLastname(lastname);
+        updatedCustomer.setPhonenumber(phonenumber);
+        updatedCustomer.setGender(gender);
+        updatedCustomer.setDate(date);
+
+        try {
+            int result = customerDAO.updateCustomer(updatedCustomer);
+            if (result > 0) {
+                // Update successful
+                HttpSession session = request.getSession(false); // Lấy phiên làm việc hiện tại hoặc null nếu không có phiên
+                if (session != null) {
+                    session.invalidate(); // Xoá phiên làm việc
+                }
+                response.sendRedirect("View/User/login.jsp"); // Chuyển hướng đến trang đăng nhập của admin
+            } else {
+                // Update failed, handle accordingly
+                response.sendRedirect("View/User/chitiettk.jsp?error=update_failed");
+            }
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+            System.out.println("error :" + e.getMessage());
+        }
+    }
+
 }

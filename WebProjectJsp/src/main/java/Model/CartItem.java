@@ -3,12 +3,10 @@ package Model;
 public class CartItem {
     private Food food;
     private int quantity;
-    private Customer customer; // Add Customer property
 
-    public CartItem(Food food, int quantity, Customer customer) {
+    public CartItem(Food food, int quantity) {
         this.food = food;
         this.quantity = quantity;
-        this.customer = customer;
     }
 
     public Food getFood() {
@@ -25,13 +23,5 @@ public class CartItem {
 
     public void setQuantity(int quantity) {
         this.quantity = quantity;
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
     }
 }

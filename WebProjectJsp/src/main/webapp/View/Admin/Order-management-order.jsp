@@ -6,6 +6,9 @@ if (session.getAttribute("username") == null) {
 	response.sendRedirect("login.jsp");
 }
 %>
+<%@ page import="java.util.List"%>
+<%@ page import="Model.Payment"%>
+<%@ page import="Demo.PaymentDAO"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +20,7 @@ if (session.getAttribute("username") == null) {
 <body>
 	<div class="container">
 		<!-- body -->
-		<div class="body-left">
+				<div class="body-left">
 			<h2>ADMIN PANEL</h2>
 			<ul>
 				<form method="post"
@@ -29,14 +32,13 @@ if (session.getAttribute("username") == null) {
 						Logout
 					</button>
 				</form>
+
 				<a href="Add-poster.jsp"><li><img src="img/plus.png" alt=""
 						style="width: 10px; color: black;"> Add Poster</li></a>
 				<a href="Add-Category-food.jsp"><li><img src="img/plus.png"
 						alt="" style="width: 10px;"> Add Category Food</li></a>
 				<a href="Add-Food.jsp"><li><img src="img/plus.png" alt=""
 						style="width: 10px;"> Add Food</li></a>
-				<a href="Add-News.jsp"><li><img src="img/plus.png" alt=""
-						style="width: 10px;"> Add News</li></a>
 				<li id="order"><img src="img/manager-icon.png" alt=""
 					style="width: 10px;"> <a href="">Order management</a>
 					<ul class="menu-dacap">
@@ -45,9 +47,7 @@ if (session.getAttribute("username") == null) {
 						<li><img src="img/manager-icon.png" alt=""
 							style="width: 10px;"><a href="Order-management-order.jsp">Order</a></li>
 					</ul></li>
-				<a href="User-management.jsp"><li><img
-						src="img/manager-icon.png" alt="" style="width: 10px;"> User
-						management</li></a>
+
 			</ul>
 		</div>
 		<div class="body-right">
@@ -57,37 +57,41 @@ if (session.getAttribute("username") == null) {
 			<div class="body">
 				<div class="content">
 					<div class="content-right">
-						<form method="post" action="your_server_script.jsp">
-							<p>Name of the person:</p>
-							<p>
-								<input type="text" name="name" placeholder="name">
-							</p>
-							<p>Phone number:</p>
-							<p>
-								<input type="number" name="phone-number"
-									placeholder="phone number">
-							</p>
-							<p>Email:</p>
-							<p>
-								<input type="text" name="email" placeholder="email">
-							</p>
-							<p>Delivery address:</p>
-							<p>
-								<input type="text" name="address" placeholder="address">
-							</p>
-							<p>Order date:</p>
-							<p>
-								<input type="date" name="date" placeholder="date">
-							</p>
-							<p>The dishes are ordered:</p>
-							<p>
-								<input type="text" name="the-dishes-are-ordered"
-									placeholder="the dishes are ordered">
-							</p>
-							<p>
-								<button type="submit" class="Add-bnt">Update</button>
-							</p>
-						</form>
+						<h3>Payment Records</h3>
+						<table border="1">
+							<tr>
+								<th>ID</th>
+								<th>Name Food</th>
+								<th>Price</th>
+								<th>Total</th>
+								<th>Quantity</th>
+								<th>Full Name</th>
+								<th>Email</th>
+								<th>Address</th>
+								<th>Customer ID</th>
+							</tr>
+
+							<%
+							PaymentDAO paymentDAO = new PaymentDAO();
+							List<Payment> payments = paymentDAO.getAllPayments();
+
+							for (Payment payment : payments) {
+							%>
+							<tr>
+								<td><%=payment.getId_payment()%></td>
+								<td><%=payment.getName_food()%></td>
+								<td><%=payment.getPrice()%></td>
+								<td><%=payment.getTotal()%></td>
+								<td><%=payment.getQuantity()%></td>
+								<td><%=payment.getFullName()%></td>
+								<td><%=payment.getEmail()%></td>
+								<td><%=payment.getAddress()%></td>
+								<td><%=payment.getId_customer()%></td>
+							</tr>
+							<%
+							}
+							%>
+						</table>
 					</div>
 				</div>
 			</div>

@@ -86,6 +86,7 @@ FoodDAO foodDAO = new FoodDAO();
 					<form action="${pageContext.request.contextPath}/AddToCartServlet"
 						method="post">
 						<input type="hidden" name="id_food" value="<%=food.getId_food()%>">
+						<input type="hidden" name="action" value="add">
 						<button class="food-button_product" type="submit">Add</button>
 					</form>
 					<%

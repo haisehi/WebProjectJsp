@@ -24,7 +24,7 @@ if (session.getAttribute("username") == null) {
 <body>
 	<div class="container">
 		<!-- body -->
-		<div class="body-left">
+				<div class="body-left">
 			<h2>ADMIN PANEL</h2>
 			<ul>
 				<form method="post"
@@ -36,14 +36,13 @@ if (session.getAttribute("username") == null) {
 						Logout
 					</button>
 				</form>
+
 				<a href="Add-poster.jsp"><li><img src="img/plus.png" alt=""
 						style="width: 10px; color: black;"> Add Poster</li></a>
 				<a href="Add-Category-food.jsp"><li><img src="img/plus.png"
 						alt="" style="width: 10px;"> Add Category Food</li></a>
 				<a href="Add-Food.jsp"><li><img src="img/plus.png" alt=""
 						style="width: 10px;"> Add Food</li></a>
-				<a href="Add-News.jsp"><li><img src="img/plus.png" alt=""
-						style="width: 10px;"> Add News</li></a>
 				<li id="order"><img src="img/manager-icon.png" alt=""
 					style="width: 10px;"> <a href="">Order management</a>
 					<ul class="menu-dacap">
@@ -52,9 +51,7 @@ if (session.getAttribute("username") == null) {
 						<li><img src="img/manager-icon.png" alt=""
 							style="width: 10px;"><a href="Order-management-order.jsp">Order</a></li>
 					</ul></li>
-				<a href="User-management.jsp"><li><img
-						src="img/manager-icon.png" alt="" style="width: 10px;"> User
-						management</li></a>
+
 			</ul>
 		</div>
 

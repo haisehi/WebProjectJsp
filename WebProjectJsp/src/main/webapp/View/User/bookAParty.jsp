@@ -105,28 +105,27 @@ List<Food> foods = foodDAO.getLimitedFoods(6);
 		</section>
 		<section class="menu">
 			<h2>Thực đơn tiệc</h2>
-					<%
-		for (Food food : foods) {
-		%>
+			<%
+			for (Food food : foods) {
+			%>
 			<ul class="menu_list">
-				<li class="menu_list-item">
-				<a href="#"> 
-						<img 
-						class="menu_list-img" 
-						src="${pageContext.request.contextPath}/View/img/<%=food.getImage_food()%>" 
+				<li class="menu_list-item"><a href="#"> <img
+						class="menu_list-img"
+						src="${pageContext.request.contextPath}/View/img/<%=food.getImage_food()%>"
 						alt="<%=food.getImage_food()%>">
 						<h3><%=food.getName_food()%></h3>
 						<h3 style="color: red;"><%=food.getPrice()%></h3>
 				</a></li>
 			</ul>
-		<%
-		}
-		%>
+			<%
+			}
+			%>
 
 		</section>
 		<section class="book_party">
 			<h2>Đặt tiệc</h2>
-			<form action="" method="">
+			<form action="${pageContext.request.contextPath}/bookPartyController"
+				method="post">
 				<div>
 					<div>
 						<img
@@ -142,16 +141,16 @@ List<Food> foods = foodDAO.getLimitedFoods(6);
 							</div>
 
 							<div class="form-group">
-								<label for="họ tên">Họ và tên</label> <input type="text"
-									id="họ-tên" required>
+								<label for="họ tên">Họ và tên</label> <input name="fullname"
+									type="text" required>
 							</div>
 							<div class="form-group">
 								<label for="số điện thoại">Số điện thoại</label> <input
-									type="number" id="số-điện-thoại" required>
+									type="number" name="phone" required>
 							</div>
 							<div class="form-group">
-								<label for="email">Email</label> <input type="text" id="email"
-									required>
+								<label for="email">Email</label> <input type="email"
+									name="email" required>
 							</div>
 
 
@@ -162,31 +161,31 @@ List<Food> foods = foodDAO.getLimitedFoods(6);
 										tin buổi tiệc</h3></b>
 							</div>
 							<div class="form-group">
-								<label for="ngày">Ngày</label> <input type="date" id="ngày"
+								<label for="ngày">Ngày</label> <input type="date" name="date"
 									required>
 							</div>
 							<div class="form-group">
-								<label for="giờ">Giờ</label> <input type="time" id="giờ"
+								<label for="giờ">Giờ</label> <input type="time" name="time"
 									required>
 							</div>
 							<div class="form-group">
 								<Label for="số-lượng">Số lượng</Label><br> <select
-									style="width: 104%;">
-									<option value="male">1-20</option>
-									<option value="female">21-50</option>
-									<option value="female">51+</option>
-									<option value="female">chưa xác định</option>
+									name="quantity" style="width: 104%;">
+									<option>...</option>
+									<option value="10">1-10</option>
+									<option value="20">10-20</option>
+									<option value="20+">20+</option>
 								</select>
 							</div>
 
 
 							<div class="form-group">
 								<label for="địa điểm">Địa điểm</label> <input type="text"
-									id="địa điểm" required>
+									name="address" required>
 							</div>
 							<div class="form-group">
 								<label for="lời nhắn">Lời nhắn</label>
-								<textarea id="lời nhắn"></textarea>
+								<textarea name="content"></textarea>
 							</div>
 						</div>
 					</div>
@@ -199,7 +198,8 @@ List<Food> foods = foodDAO.getLimitedFoods(6);
 							</p>
 						</center>
 						<center>
-							<button type="submit" class="btn">XÁC NHẬN ĐẶT TIỆC</button>
+							<button type="submit" class="btn" name="action" value="bookParty">XÁC
+								NHẬN ĐẶT TIỆC</button>
 						</center>
 					</div>
 				</div>

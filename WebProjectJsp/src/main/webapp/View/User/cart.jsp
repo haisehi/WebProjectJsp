@@ -3,20 +3,10 @@
 <%@ page import="java.util.List"%>
 <%@ page import="Model.CartItem"%>
 <%@ page import="Model.Food"%>
-<%@ page import="Demo.ShoppingCartDAO"%>
-<%@ page import="javax.servlet.http.HttpSession"%>
-<%
-HttpSession userSession = request.getSession(false);
-String email = (String) userSession.getAttribute("email");
-int customerId = (int) userSession.getAttribute("customerId"); // Assuming customerId is an integer
-%>
 
-<%
-List<CartItem> cartItems = null;
-if (customerId != 0) {
-	cartItems = new ShoppingCartDAO().getCartItemsCustomer(customerId);
-}
-%>
+<%@ page import="Demo.ShoppingCart"%>
+<%@ page import="Demo.PaymentDAO"%>
+<%@ page import="Model.Payment"%>
 
 <!DOCTYPE html>
 <html>
@@ -42,32 +32,13 @@ if (customerId != 0) {
 	<h1>Shopping Cart</h1>
 
 	<%
-	// Kiểm tra xem có phiên đăng nhập không
-	if (email == null) {
-	%>
-	<p>Login to buy a product.</p>
-	<%
-	} else {
-	// Nếu có phiên đăng nhập, chuyển hướng đến trang chitiettk.jsp
-	%>
+	List<CartItem> cartItems = ShoppingCart.getCartItems();
 
-	<%
-	if (cartItems == null || cartItems.isEmpty()) {
+	if (cartItems.isEmpty()) {
 	%>
 	<p>Your cart is empty.</p>
 	<%
 	} else {
-	// Map to store aggregated quantities for each product ID
-	java.util.Map<Integer, Integer> aggregatedQuantities = new java.util.HashMap<>();
-
-	// Iterate through cart items and aggregate quantities
-	for (CartItem item : cartItems) {
-		int foodId = item.getFood().getId_food();
-		int quantity = item.getQuantity();
-
-		// Update the aggregated quantity for the product ID
-		aggregatedQuantities.put(foodId, aggregatedQuantities.getOrDefault(foodId, 0) + quantity);
-	}
 	%>
 	<table border="1">
 		<tr>
@@ -76,24 +47,33 @@ if (customerId != 0) {
 			<th>Price</th>
 			<th>Quantity</th>
 			<th>Total</th>
+			<th>Action</th>
 		</tr>
 
 		<%
 		double grandTotal = 0;
 		for (CartItem item : cartItems) {
 			Food food = item.getFood();
-			int foodId = food.getId_food();
-			int quantity = aggregatedQuantities.get(foodId);
+			int quantity = item.getQuantity();
 			double total = food.getPrice() * quantity;
 			grandTotal += total;
 		%>
 
 		<tr>
-			<td><%=foodId%></td>
+			<td><%=food.getId_food()%></td>
 			<td><%=food.getName_food()%></td>
 			<td><%=food.getPrice()%></td>
 			<td><%=quantity%></td>
 			<td><%=total%></td>
+			<td>
+				<form
+					action="${pageContext.request.contextPath}/AddToCartServlet"
+					method="post">
+					<input type="hidden" name="action" value=delete>
+					<input type="hidden" name="id_food" value="<%=food.getId_food()%>">
+					<button class="food-button_product" type="submit">Remove</button>
+				</form>
+			</td>
 		</tr>
 
 		<%
@@ -101,17 +81,27 @@ if (customerId != 0) {
 		%>
 
 		<tr>
-			<td colspan="4">Grand Total</td>
+			<td colspan="5">Grand Total</td>
 			<td><%=grandTotal%></td>
 		</tr>
 	</table>
+	<!-- Payment form -->
+	<form action="${pageContext.request.contextPath}/ProcessPaymentServlet"
+		method="post">
+		<label for="fullName">Full Name:</label> <input type="text"
+			id="fullName" name="fullName" required><br> <label
+			for="email">Email:</label> <input type="email" id="email"
+			name="email" required><br> <label for="address">Address:</label>
+		<textarea id="address" name="address" required></textarea>
+		<br> <input type="hidden" name="grandTotal"
+			value="<%=grandTotal%>">
+
+		<button type="submit">Proceed to Payment</button>
+	</form>
 	<%
 	}
 	%>
 
-	<%
-	}
-	%>
 </div>
 <!-- Add your other HTML content or links here -->
 <!-- footer -->

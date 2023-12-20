@@ -3,7 +3,8 @@
 <%@ page import="Demo.CategoryFoodDAO"%>
 <%@ page import="java.util.List"%>
 <%@ page import="Model.CategoryFood"%>
-
+<%@ page import="Demo.PosterDAO"%>
+<%@ page import="Model.poster"%>
 <%@ page import="Demo.FoodDAO"%>
 <%@ page import="Model.Food"%>
 <%
@@ -11,6 +12,8 @@ CategoryFoodDAO categoryFoodDAO = new CategoryFoodDAO();
 List<CategoryFood> categories = categoryFoodDAO.getAllCategories();
 FoodDAO foodDAO = new FoodDAO();
 List<Food> foods = foodDAO.getLimitedFoods(8);
+PosterDAO posterDAO = new PosterDAO();
+List<poster> posters = posterDAO.getAllPosters();
 %>
 
 <meta charset="UTF-8">
@@ -36,15 +39,17 @@ List<Food> foods = foodDAO.getLimitedFoods(8);
 		<!-- Swiper -->
 		<div class="swiper mySwiper">
 			<div class="swiper-wrapper">
+				<%
+				for (poster posterss : posters) {
+				%>
 				<div class="swiper-slide" style="background-color: red;">
 					<img
-						src="https://static.kfcvietnam.com.vn/images/content/home/carousel/lg/GaQueKem.webp?v=k4Bd83"
-						alt="">
+						src="${pageContext.request.contextPath}/View/img/<%=posterss.getImage()%>"
+						alt="<%=posterss.getImage()%>">
 				</div>
-				<div class="swiper-slide" style="background-color: yellow;">Slide
-					2</div>
-				<div class="swiper-slide" style="background-color: green;">Slide
-					3</div>
+				<%
+				}
+				%>
 			</div>
 			<div class="swiper-button-next customBtn"></div>
 			<div class="swiper-button-prev customBtn"></div>
@@ -85,23 +90,25 @@ List<Food> foods = foodDAO.getLimitedFoods(8);
 			<!-- movies conatiner -->
 			<div class="food-container">
 				<!-- box 1 -->
-									<%
-					for (Food food : foods) {
-					%>
+				<%
+				for (Food food : foods) {
+				%>
 				<div class="box">
 					<div class="box-img">
-						<img src="${pageContext.request.contextPath}/View/img/<%=food.getImage_food()%>" alt="">
+						<img
+							src="${pageContext.request.contextPath}/View/img/<%=food.getImage_food()%>"
+							alt="">
 					</div>
 					<div class="box_price_title">
 						<h3 class="title_product"><%=food.getName_food()%></h3>
 					</div>
 
 				</div>
-					<%
-					}
-					%>
+				<%
+				}
+				%>
 
-				</div>
+			</div>
 		</section>
 	</div>
 </div>

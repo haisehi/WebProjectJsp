@@ -26,73 +26,72 @@ if (session.getAttribute("email") == null) {
 <section class="wrapper_cttk">
 	<div class="content-left">
 		<img class="img_user" src="img/logo.png" alt="">
-		<h2>XIN CHÀO !!! ${sessionScope.username}</h2>
+		<h2>XIN CHÀO ${sessionScope.customer.firstname}</h2>
 		<h3>
-			<u><form method="post"
+			<u>
+				<form method="post"
 					action="${pageContext.request.contextPath}/userController">
 					<input type="hidden" name="action" value="logout">
 					<button type="submit"
 						style="color: #fff; background-color: transparent; border: none; text-decoration: underline; cursor: pointer;">Đăng
 						xuất</button>
-				</form></u>
+				</form>
+			</u>
 		</h3>
 		<h4>
-			<a href="">Đơn hàng đã đặt</a>
-		</h4>
-		<h4>
-			<a href="">Đơn hàng yêu thích</a>
+			<a href="order.jsp">Đơn hàng đã đặt</a>
 		</h4>
 		<h4>
 			<a href="">Địa chỉ của bạn</a>
 		</h4>
 		<h4>
-			<a href="">Chi tiết tài khoản</a>
-		</h4>
-		<h4>
-			<a style="color: #fff;">Đặt lại mật khẩu</a>
-		</h4>
-		<h4>
-			<a href="">Xóa tài khoản</a>
+			<a href="chitiettk.jsp">Chi tiết tài khoản</a>
 		</h4>
 	</div>
 
 	<div class="content-right">
 		<h2>CHI TIẾT TÀI KHOẢN</h2>
-		<form action="#">
+		<form action="${pageContext.request.contextPath}/userController"
+			method="post">
 			<div class="form-group">
-				<label for="họ và tên">Họ và tên</label><br> <input type="text"
-					id="ho-ten" required value=`${sessionScope.username}`>
+				<label for="họ và tên">Họ</label><br> 
+				<input type="text" name="firstname" required value="${sessionScope.customer.firstname}">
+			</div>
+			<div class="form-group">
+				<label for="họ và tên">Tên</label><br> 
+				<input type="text" name="lastname" required value="${sessionScope.customer.lastname}">
+			</div>
+			<div class="form-group">
+				<label for="số điện thoại">Số điện thoại</label><br> 
+				<input type="number" name="phonenumber" required value="${sessionScope.customer.phonenumber}">
 			</div>
 
 			<div class="form-group">
-				<label for="số điện thoại">Số điện thoại</label><br> <input
-					type="number" id="sdt" required value=`${sessionScope.username}`>
-			</div>
-
-			<div class="form-group">
-				<label for="Email">Email</label><br> <input type="text"
-					id="Email" required value=`${sessionScope.username}`>
+				<label for="Email">Email</label><br> 
+				<input type="text" name="email" required value="${sessionScope.customer.email}">
 			</div>
 			<div class="form-group">
-				<span>Giới tính</span><br> <select>
-					<option value="male">Nam</option>
-					<option value="female">Nữ</option>
+				<span>Giới tính</span><br> 
+				<select name="gender">
+					<option value="male"
+						${sessionScope.customer.gender eq 'male' ? 'selected' : ''}>Nam</option>
+					<option value="female"
+						${sessionScope.customer.gender eq 'female' ? 'selected' : ''}>Nữ</option>
 				</select>
 			</div>
 
 			<div class="form-group">
-				<label for="ngày">Ngày sinh</label><br> <input type="date"
-					id="ngày" required value=`${sessionScope.username}`>
+				<label for="ngày">Ngày sinh</label><br> 
+				<input type="date" name="date" required value="${sessionScope.customer.date}">
 			</div>
 
+			<input type="hidden" name="action" value="update">
 			<div style="padding-top: 30px;">
 				<center>
-					<button class="btn-datngay" id="datngay">Cập nhật tài
+					<button class="btn-datngay">Cập nhật tài
 						khoản</button>
 				</center>
 			</div>
 		</form>
 	</div>
 </section>
-
-

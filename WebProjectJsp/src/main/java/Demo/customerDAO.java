@@ -33,7 +33,6 @@ public class customerDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return result;
     }
     
@@ -54,27 +53,25 @@ public class customerDAO {
         }
     }
     
-    // Thêm phương thức này để lấy tên của khách hàng từ CSDL
-    public String getCustomerName(String email) throws ClassNotFoundException {
-        String customerName = null;
-
+ // Thêm phương thức này để lấy id của khách hàng từ CSDL thay vì tên
+    public int getCustomerId(String email) throws ClassNotFoundException {
+        int customerId = -1; // Return -1 if no customer found
 
         try (Connection connection = DatabaseConnection.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement("SELECT firstname FROM customer WHERE email = ?")) {
+             PreparedStatement preparedStatement = connection.prepareStatement("SELECT id_customer FROM customer WHERE email = ?")) {
             preparedStatement.setString(1, email);
 
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                customerName = resultSet.getString("firstname");
-
+                customerId = resultSet.getInt("id_customer");
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
-        return customerName;
+        return customerId;
     }
+
     
     public Customer getCustomerByEmail(String email) throws ClassNotFoundException {
         Customer customer = null;
@@ -99,10 +96,8 @@ public class customerDAO {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
         return customer;
     }
-
     
     private void printSQLException(SQLException ex) {
         for (Throwable e: ex) {
@@ -119,5 +114,26 @@ public class customerDAO {
             }
         }
     }
+    
+    public int updateCustomer(Customer customer) throws ClassNotFoundException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+        int result = 0;
+        try (Connection connection = DatabaseConnection.getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(
+                     "UPDATE customer SET firstname=?, lastname=?, phonenumber=?, gender=?, date=? WHERE id_customer=?")) {
+            preparedStatement.setString(1, customer.getFirstname());
+            preparedStatement.setString(2, customer.getLastname());
+            preparedStatement.setInt(3, customer.getPhonenumber());
+            preparedStatement.setString(4, customer.getGender());
+            preparedStatement.setDate(5, customer.getDate());
+            preparedStatement.setInt(6, customer.getId_customer());
+
+            result = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return result;
+    }
+
 
 }

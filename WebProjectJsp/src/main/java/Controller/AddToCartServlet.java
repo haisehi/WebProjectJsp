@@ -1,57 +1,71 @@
 package Controller;
 
 import java.io.IOException;
-import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import Demo.FoodDAO;
-import Demo.ShoppingCartDAO;
+import Demo.ShoppingCart;
+
 import Model.Food;
 
 @WebServlet("/AddToCartServlet")
 public class AddToCartServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Fetch food ID and quantity from the request
-        int foodId = Integer.parseInt(request.getParameter("id_food"));
-        String quantityParam = request.getParameter("quantity");
-        int quantity = (quantityParam != null && !quantityParam.isEmpty()) ? Integer.parseInt(quantityParam) : 1;
+        String action = request.getParameter("action");
 
-        // Fetch customer ID from the session
-        HttpSession session = request.getSession(false);
-        if (session != null && session.getAttribute("customerId") != null) {
-            int customerId = (int) session.getAttribute("customerId");
-
-            // Instantiate ShoppingCartDAO
-            ShoppingCartDAO cartDAO = new ShoppingCartDAO();
-            try {
-                // Check if the item is already in the cart
-                if (cartDAO.isItemInCart(foodId, customerId)) {
-                    // If the item is in the cart, update the quantity
-                    cartDAO.updateCartItem(foodId, quantity, customerId);
-                } else {
-                    // If the item is not in the cart, add it
-                    FoodDAO foodDAO = new FoodDAO();
-                    Food food = foodDAO.getFoodById(foodId);
-                    cartDAO.addToCart(food, quantity, customerId);
-                }
-                System.out.println("Thêm sản phẩm vào giỏ hàng thành công");
-            } catch (ClassNotFoundException | SQLException e) {
-                e.printStackTrace();
-                // Handle the exception (redirect to an error page, log, etc.)
-            }
-
-            // Redirect back to the menu or any desired page
-            response.sendRedirect("View/User/cart.jsp");
-        } else {
-            // Handle the case where the customer ID is not available in the session
-            System.out.println("Customer ID not found in the session.");
-            // Optionally, you can redirect to an error page or handle this case as needed
+        switch (action) {
+            case "add":
+                addProduct(request, response);
+                break;
+            case "delete":
+                removeProduct(request, response);
+                break;
         }
+    }
+
+    private void addProduct(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        int foodId = Integer.parseInt(request.getParameter("id_food"));
+
+        // Lấy thông tin sản phẩm từ ID
+        FoodDAO foodDAO = new FoodDAO();
+        Food food;
+        try {
+            food = foodDAO.getFoodById(foodId);
+
+            // Thêm sản phẩm vào giỏ hàng (có thể kiểm tra xem sản phẩm đã tồn tại trong giỏ hàng chưa)
+            ShoppingCart.addToCart(food);
+
+        } catch (ClassNotFoundException e) {
+            // Xử lý ngoại lệ
+            e.printStackTrace();
+        }
+
+        // Chuyển hướng về trang giỏ hàng
+        response.sendRedirect(request.getContextPath() + "/View/User/cart.jsp");
+    }
+
+    private void removeProduct(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        // Lấy ID của sản phẩm cần xoá khỏi giỏ hàng
+        int foodId = Integer.parseInt(request.getParameter("id_food"));
+        try {
+            // Xoá sản phẩm khỏi giỏ hàng
+            ShoppingCart.removeFromCart(foodId);
+            System.out.println("delete ok");
+		} catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+
+
+        // Chuyển hướng về trang giỏ hàng
+        response.sendRedirect(request.getContextPath() + "/View/User/cart.jsp");
     }
 }

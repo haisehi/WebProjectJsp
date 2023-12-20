@@ -23,7 +23,7 @@ String email = (String) userSession.getAttribute("email");
 					<li class="navbar_item">BOOK A PARTY</li>
 				</a>
 				<a href="news.jsp">
-					<li class="navbar_item">NEWS</li>
+					<li class="navbar_item">SERVICE</li>
 				</a>
 				<a href="findStore.jsp">
 					<li class="navbar_item">FIND STORE</li>
@@ -45,14 +45,13 @@ String email = (String) userSession.getAttribute("email");
 			%>
 			<a href="chitiettk.jsp"> <i
 				class="fa-regular fa-circle-user icon_navbarHeaderRight"></i>
-			</a> <a href="cart.jsp"> <i
-				class="fa-solid fa-cart-shopping icon_navbarHeaderRight"></i>
-			</a>
+
 			<%
 			}
 			%>
-
-
+			</a> <a href="cart.jsp"> <i
+				class="fa-solid fa-cart-shopping icon_navbarHeaderRight"></i>
+			</a>
 			<button class="icon_header_taskbar">
 				<i class="fa-solid fa-bars icon_navbarHeaderRight"></i>
 			</button>

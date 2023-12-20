@@ -1,10 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ page import="Demo.BookPartyDAO"%>
+<%@ page import="Model.bookParty"%>
+<%@ page import="java.util.List"%>
 <%
 // Kiểm tra nếu người dùng chưa đăng nhập, thì chuyển hướng về trang đăng nhập
 if (session.getAttribute("username") == null) {
 	response.sendRedirect("login.jsp");
 }
+
+// Lấy danh sách các bữa tiệc từ CSDL
+BookPartyDAO bookPartyDAO = new BookPartyDAO();
+List<bookParty> parties = bookPartyDAO.getAllBookParties();
 %>
 <!DOCTYPE html>
 <html lang="en">
@@ -29,14 +36,13 @@ if (session.getAttribute("username") == null) {
 						Logout
 					</button>
 				</form>
+
 				<a href="Add-poster.jsp"><li><img src="img/plus.png" alt=""
 						style="width: 10px; color: black;"> Add Poster</li></a>
 				<a href="Add-Category-food.jsp"><li><img src="img/plus.png"
 						alt="" style="width: 10px;"> Add Category Food</li></a>
 				<a href="Add-Food.jsp"><li><img src="img/plus.png" alt=""
 						style="width: 10px;"> Add Food</li></a>
-				<a href="Add-News.jsp"><li><img src="img/plus.png" alt=""
-						style="width: 10px;"> Add News</li></a>
 				<li id="order"><img src="img/manager-icon.png" alt=""
 					style="width: 10px;"> <a href="">Order management</a>
 					<ul class="menu-dacap">
@@ -45,39 +51,56 @@ if (session.getAttribute("username") == null) {
 						<li><img src="img/manager-icon.png" alt=""
 							style="width: 10px;"><a href="Order-management-order.jsp">Order</a></li>
 					</ul></li>
-				<a href="User-management.jsp"><li><img
-						src="img/manager-icon.png" alt="" style="width: 10px;"> User
-						management</li></a>
+
 			</ul>
 		</div>
 		<div class="body-right">
-			<div class=" header">
+			<div class="header">
 				<img src="img/logo.png" alt="" style="width: 100px;">
 			</div>
-			<divclass "body">
-                <div class="content">
-                    <div class="content-right">
-                        <form method="post" action="your_server_script.jsp">
-                        	<p>Name of the person:</p>
-                            <p><input type="text" name="name" placeholder="name"></p>
-                            <p>Phone number:</p>
-                            <p><input type="number" name="phone-number" placeholder="phone number"></p>
-                            <p>Email:</p>
-                            <p><input type="text" name="email" placeholder="email"></p>
-                            <p>Organization address:</p>
-                            <p><input type="text" name="address" placeholder="address"></p>
-                            <p>Banquet date:</p> 
-                            <p><input type="date" name="date" placeholder="date"></p>
-                            <p>Feast type:</p> 
-                            <p><input type="text" name="type" placeholder="type"></p>
-                            <p>Number of participants:</p>  
-                            <p><input type="number" name="number-of-participants" placeholder="number of participants"></p>
-                            <p><button type="submit" class="Add-bnt">Update</button></p>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+			<div class="body">
+				<div class="content">
+					<div class="content-right">
+						<table border="1">
+							<thead>
+								<tr>
+									<th>id_party</th>
+									<th>fullname</th>
+									<th>phone</th>
+									<th>email</th>
+									<th>date</th>
+									<th>time</th>
+									<th>quantity</th>
+									<th>address</th>
+									<th>content</th>
+								</tr>
+							</thead>
+							<tbody>
+								<!-- Iterate through the list of parties and display each row -->
+								
+								<%
+								for (bookParty party : parties) {
+								%>
+								<tr>
+									<td><%=party.getId_party()%></td>
+									<td><%=party.getFullname()%></td>
+									<td><%=party.getPhone()%></td>
+									<td><%=party.getEmail()%></td>
+									<td><%=party.getDate()%></td>
+									<td><%=party.getTime()%></td>
+									<td><%=party.getQuantity()%></td>
+									<td><%=party.getAddress()%></td>
+									<td><%=party.getContent()%></td>
+								</tr>
+								<%
+								}
+								%>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </body>
 </html>
